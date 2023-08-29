@@ -5,6 +5,7 @@ import { DefaultComponent } from './default.component';
 import { ProductComponent } from 'src/app/modules/product/product.component';
 import { HomeComponent } from 'src/app/modules/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -17,7 +18,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ]
 })
 export class DefaultModule { }
