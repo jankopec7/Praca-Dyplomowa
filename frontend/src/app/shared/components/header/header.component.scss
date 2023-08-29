@@ -1,4 +1,15 @@
+@import '../../../../variables.scss';
 :host{
-    background: #87CEEB;
+    background: $blue;
     padding: 20px;
+}
+.logo{
+    font-size:32px;
+    color: white;
+    font-family: Google Sans,-apple-system,BlinkMacSystemFont,sans-serif;
+    font-weight: 500;
+
+}
+.logoIcon, .shoppingBasket{
+    font-size:27px
 }
