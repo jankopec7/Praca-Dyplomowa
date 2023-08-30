@@ -4,14 +4,20 @@
     height: 100%;
 }
 .content{
+    background: #f9f9f9;
     padding: 20px;
+
 }
 header{
-    background: #ccc;
+    background: #00C3FF;
     padding: 20px;
 }
 .sidebar{
-    background: #dddd;
+    background: #d4ebf2;
     padding: 20px;
+    
+    a{
+        color: #fff;
+    }
 
 }
