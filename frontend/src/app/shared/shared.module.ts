@@ -5,9 +5,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -18,14 +16,13 @@ import {MatListModule} from '@angular/material/list';
     CommonModule,
     RouterModule,
     FlexModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule
+    MaterialModule
   ],
   exports:[
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    MaterialModule
   ]
 })
 export class SharedModule { }
