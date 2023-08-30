@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from './model/product.service';
+import { ProductService } from './product.service';
 import { Product } from './model/product';
 
 @Component({
@@ -18,6 +18,7 @@ products: Product[] = [];
   }
   
   getProduct(){
-    this.products = this.productService.getProducts();
+    this.productService.getProducts()
+    .subscribe(products => this.products = products);
   }
 }
