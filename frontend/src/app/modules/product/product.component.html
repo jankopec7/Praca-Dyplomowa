@@ -1,11 +1,11 @@
 <h1>Products</h1>
-<mat-card *ngFor="let product of products">
+<mat-card *ngFor="let product of page?.content">
     <div flexLayout="row">
         <div flexLayout="column" fxFlex>
-            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-title>>{{product.name}}</mat-card-title>
             <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
             <div flexLayout="row">
-                <img src="/assets/image-placeholder.png" mat-card-lg-image class="productImage">
+                    <img  src="/assets/image-placeholder.png" mat-card-lg-image class="productImage">
                 <mat-card-content fxFlex class="productContent">{{product.description}}</mat-card-content>
             </div>
         </div>
@@ -18,3 +18,11 @@
         <button mat-flat-button color="primary">Add to cart</button>
     </mat-card-actions>
 </mat-card>
+
+<mat-paginator *ngIf="page && page.totalElements > 0"
+             [length]="page?.totalElements"
+              [pageSize]="10"
+              [pageSizeOptions]="[10, 30, 60, 90]"
+              aria-label="Chose page"
+              (page)="onPageEvent($event)">
+</mat-paginator>
