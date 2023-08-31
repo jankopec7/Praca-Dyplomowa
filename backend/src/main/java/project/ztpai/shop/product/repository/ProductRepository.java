@@ -6,6 +6,7 @@ import project.ztpai.shop.product.model.Product;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-
+    Optional<Product> findBySlug(String slug);
 }
+
 
