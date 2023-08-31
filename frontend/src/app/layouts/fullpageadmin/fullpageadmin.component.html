@@ -1,22 +1,23 @@
-<header fxLayout="column" fxLayoutAlign="start center">
+<header fxLayoutAlign="start center">
     <div fxFlex>
         <div fxFlex fxLayoutAlign="start end" fxLayoutGap="15px">
             <button mat-fab matTooltip="Primary" color="primary">
                 <mat-icon class="logoIcon">store</mat-icon>
               </button>
-            <span class="logo">Shop panel</span>
+            <span class="logo">Shopit Panel</span>
         </div>  
     </div>
 </header>
 <div fxLayout="row" fxFlex>
     <div class="sidebar">
-        <mat-selection-list [multiple]="false">
-            <mat-list-option><a routerLink="/admin">Dashboard</a></mat-list-option>
-            <mat-list-option><a routerLink="/admin">Products</a></mat-list-option>
-            <mat-list-option><a routerLink="/admin">Link</a></mat-list-option>
-        </mat-selection-list>
+        <mat-list>
+            <mat-list-item><a routerLink="/admin">Dashboard</a></mat-list-item>
+            <mat-list-item><a routerLink="/admin/products">Products</a></mat-list-item>
+            <mat-list-item><a routerLink="/admin">Links</a></mat-list-item>
+        </mat-list>
     </div>
     <div fxFlex class="content">
+        <app-admin-message></app-admin-message>
         <router-outlet></router-outlet>
     </div>
 </div>
