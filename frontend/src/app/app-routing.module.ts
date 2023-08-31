@@ -11,6 +11,9 @@ import { HomeComponent } from './modules/home/home.component';
 import { LoginComponent } from './modules/login/login.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 import { ProductComponent } from './modules/product/product.component';
+import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
+import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
+import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizedGuard';
 
 const routes: Routes = [
   {
@@ -27,10 +30,16 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageadminComponent, children: [
-      {path: 'admin', component: AdminComponent},
-      {path: 'admin/products', component: AdminProductComponent},
-      {path: 'admin/products/update/:id', component: AdminProductUpdateComponent},
-      {path: 'admin/products/add', component: AdminProductAddComponent}
+      {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/products', component: AdminProductComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/products/update/:id', component: AdminProductUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizeGuard]}
+    ]
+  },
+  {
+    path:'', component: FullpageadminemptyComponent, children: [
+  
+      {path: 'admin/login', component: AdminLoginComponent}
     ]
   }
 ];

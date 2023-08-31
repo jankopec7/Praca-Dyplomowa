@@ -12,7 +12,6 @@ import { AdminProductAddComponent } from 'src/app/modules/admin/admin-product-ad
 import { AdminProductFormConponent } from 'src/app/modules/admin/admin-product-form/admin-product-form.component';
 import { AdminMessageComponent } from 'src/app/modules/admin/admin-message/admin-message.component';
 import { AdminConfirmDialogComponent } from 'src/app/modules/admin/admin-confirm-dialog/admin-confirm-dialog.component';
-
 @NgModule({
   declarations: [
     FullpageadminComponent,
