@@ -22,4 +22,24 @@ alter table product add constraint ui_product_slug unique key(slug);
 --changeset jkopec7:4
 alter table product add full_description text default null after description;
 
+--changeset jkopec7:5
+create table users(
+        id bigint not null auto_increment PRIMARY KEY,
+        username varchar(50) not null unique,
+        password varchar(500) not null,
+        enabled boolean not null
+);
+--changeset jkopec7:6
+create table authorities (
+        username varchar(50) not null,
+        authority varchar(50) not null,
+        constraint fk_authorities_users foreign key(username) references users(username)
+);
+--changeset jkopec7:7
+create unique index ix_auth_username on authorities (username,authority);
+
+--changeset jkopec7:8
+insert into users (id, username, password, enabled)
+values (1, 'admin', '{bcrypt}$2a$10$upzXFsFUOClFRR69OMKF8eajGMRs0vhcSHqvNDKy9yfW45w7o9z6O', true);
+insert into authorities (username, authority) values ('admin','ROLE_ADMIN');
 
