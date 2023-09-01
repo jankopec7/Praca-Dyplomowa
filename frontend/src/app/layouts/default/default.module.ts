@@ -7,6 +7,8 @@ import { HomeComponent } from 'src/app/modules/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailsComponent } from 'src/app/modules/product-details/product-details.component';
+import { ProfileComponent } from 'src/app/modules/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,14 +17,16 @@ import { ProductDetailsComponent } from 'src/app/modules/product-details/product
     DefaultComponent,
     HomeComponent,
     ProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProfileComponent
 
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule { }

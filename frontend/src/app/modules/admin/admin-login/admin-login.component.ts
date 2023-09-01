@@ -29,16 +29,19 @@ export class AdminLoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-    submit(){
-      if(this.formGroup.valid){
-        this.adminLoginService.login(this.formGroup.value)
-          .subscribe({
-            next: (response) => {
-                this.loginError = false;
-                this.jwtService.setToken(response.token);
-                this.router.navigate(["/admin"]);
-            },
-            error: () => this.loginError = true
+  submit(){
+    if(this.formGroup.valid){
+      this.adminLoginService.login(this.formGroup.value)
+        .subscribe({
+          next: (response) => {
+            this.loginError = false;
+            if(response.adminAccess){
+              this.jwtService.setToken(response.token);
+              this.jwtService.setAdminAccess(true);
+            }
+            this.router.navigate(["/admin"]);
+          },
+          error: () => this.loginError = true
           })
       }
     }

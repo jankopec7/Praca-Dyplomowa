@@ -13,7 +13,9 @@ import { ProductDetailsComponent } from './modules/product-details/product-detai
 import { ProductComponent } from './modules/product/product.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
 import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
-import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizedGuard';
+import { AdminAuthorizedGuard } from './modules/common/guard/adminAuthorizedGuard';
+import { ProfileComponent } from './modules/profile/profile.component';
+import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorizedGuard';
 
 const routes: Routes = [
   {
@@ -30,22 +32,21 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageadminComponent, children: [
-      {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/products', component: AdminProductComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/products/update/:id', component: AdminProductUpdateComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizeGuard]}
+      {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/products', component: AdminProductComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/products/update/:id', component: AdminProductUpdateComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizedGuard]}
     ]
   },
   {
     path:'', component: FullpageadminemptyComponent, children: [
-  
       {path: 'admin/login', component: AdminLoginComponent}
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

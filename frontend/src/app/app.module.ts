@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpageadminempty.module';
 import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
-import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizedGuard';
+import { AdminAuthorizedGuard } from './modules/common/guard/adminAuthorizedGuard';
+import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorizedGuard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +25,12 @@ import { AdminAuthorizeGuard } from './modules/common/guard/adminAuthorizedGuard
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  AdminAuthorizeGuard
-],
+
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    AdminAuthorizedGuard,
+    ProfileAuthorizedGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
