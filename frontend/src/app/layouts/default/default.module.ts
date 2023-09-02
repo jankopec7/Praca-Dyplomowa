@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailsComponent } from 'src/app/modules/product-details/product-details.component';
 import { ProfileComponent } from 'src/app/modules/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryComponent } from 'src/app/modules/category/category.component';
 
 
 
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ProductComponent,
     ProductDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    CategoryComponent 
 
   ],
   imports: [
