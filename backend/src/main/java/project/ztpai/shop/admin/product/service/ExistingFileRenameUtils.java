@@ -1,4 +1,4 @@
-package project.ztpai.shop.admin.service;
+package project.ztpai.shop.admin.product.service;
 
 import org.apache.commons.io.FilenameUtils;
 

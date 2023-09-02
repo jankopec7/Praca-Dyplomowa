@@ -45,5 +45,23 @@ insert into authorities (username, authority) values ('admin','ROLE_ADMIN');
 
 --changeset jkopec7:9
 alter table users add hash varchar(120);
+
 --changeset jkopec7:10
 alter table users add hash_date datetime;
+
+--changeset jkopec7:11
+create table category(
+        id bigint not null auto_increment PRIMARY KEY,
+        name varchar(255) not null,
+        description text,
+        slug varchar(255) not null
+);
+--changeset jkopec7:12
+alter table product add category_id bigint after category;
+alter table product drop column category;
+alter table product add constraint fk_product_category_id foreign key (category_id) references category(id);
+
+--changeset jkopec7:13
+insert into category (id, name, description, slug) values(1, 'Others', '', 'others');
+update product set category_id=1;
+alter table product MODIFY category_id bigint not null;

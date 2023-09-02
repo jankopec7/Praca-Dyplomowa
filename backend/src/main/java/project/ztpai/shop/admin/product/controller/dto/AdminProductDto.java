@@ -1,8 +1,8 @@
-package project.ztpai.shop.admin.controller.dto;
+package project.ztpai.shop.admin.product.controller.dto;
 
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
-import project.ztpai.shop.admin.model.AdminProductCurrency;
+import project.ztpai.shop.admin.product.model.AdminProductCurrency;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -15,9 +15,8 @@ public class AdminProductDto {
     @NotBlank
     @Length(min = 4)
     private String name;
-    @NotBlank
-    @Length(min = 4)
-    private String category;
+    @NotNull
+    private Long categoryId;
     @NotBlank
     @Length(min = 4)
     private String description;

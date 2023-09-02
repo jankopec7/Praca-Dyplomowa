@@ -1,11 +1,11 @@
-package project.ztpai.shop.admin.service;
+package project.ztpai.shop.admin.product.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import project.ztpai.shop.admin.model.AdminProduct;
-import project.ztpai.shop.admin.repository.AdminProductRepository;
+import project.ztpai.shop.admin.product.model.AdminProduct;
+import project.ztpai.shop.admin.product.repository.AdminProductRepository;
 
 @Service
 @RequiredArgsConstructor

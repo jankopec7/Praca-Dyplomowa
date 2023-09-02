@@ -1,4 +1,4 @@
-package project.ztpai.shop.admin.controller;
+package project.ztpai.shop.admin.product.controller;
 
 import com.github.slugify.Slugify;
 import lombok.RequiredArgsConstructor;
@@ -9,11 +9,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import project.ztpai.shop.admin.controller.dto.AdminProductDto;
-import project.ztpai.shop.admin.controller.dto.UploadResponse;
-import project.ztpai.shop.admin.model.AdminProduct;
-import project.ztpai.shop.admin.service.AdminProductImageService;
-import project.ztpai.shop.admin.service.AdminProductService;
+import project.ztpai.shop.admin.product.controller.dto.AdminProductDto;
+import project.ztpai.shop.admin.product.controller.dto.UploadResponse;
+import project.ztpai.shop.admin.product.model.AdminProduct;
+import project.ztpai.shop.admin.product.service.AdminProductImageService;
+import project.ztpai.shop.admin.product.service.AdminProductService;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -78,7 +78,7 @@ public class AdminProductController {
                 .name(adminProductDto.getName())
                 .description(adminProductDto.getDescription())
                 .fullDescription(adminProductDto.getFullDescription())
-                .category(adminProductDto.getCategory())
+                .categoryId(adminProductDto.getCategoryId())
                 .price(adminProductDto.getPrice())
                 .currency(adminProductDto.getCurrency())
                 .image(adminProductDto.getImage())
