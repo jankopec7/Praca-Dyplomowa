@@ -1,4 +1,4 @@
-package project.ztpai.shop.security;
+package project.ztpai.shop.security.controller;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

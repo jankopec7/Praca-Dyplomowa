@@ -40,4 +40,6 @@ public class User implements Serializable {
     @Column(name = "authority")
     @Enumerated(EnumType.STRING)
     private List<UserRole> authorities;
+    private String hash;
+    private LocalDateTime HashDate;
 }

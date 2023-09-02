@@ -43,3 +43,7 @@ insert into users (id, username, password, enabled)
 values (1, 'admin', '{bcrypt}$2a$10$upzXFsFUOClFRR69OMKF8eajGMRs0vhcSHqvNDKy9yfW45w7o9z6O', true);
 insert into authorities (username, authority) values ('admin','ROLE_ADMIN');
 
+--changeset jkopec7:9
+alter table users add hash varchar(120);
+--changeset jkopec7:10
+alter table users add hash_date datetime;
