@@ -11,9 +11,11 @@ import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpagea
 import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
 import { AdminAuthorizedGuard } from './modules/common/guard/adminAuthorizedGuard';
 import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorizedGuard';
+
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

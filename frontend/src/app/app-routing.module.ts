@@ -17,6 +17,9 @@ import { AdminAuthorizedGuard } from './modules/common/guard/adminAuthorizedGuar
 import { ProfileComponent } from './modules/profile/profile.component';
 import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorizedGuard';
 import { LostPasswordComponent } from './modules/login/lost-password/lost-password.component';
+import { AdminCategoryComponent } from './modules/admin/admin-category/admin-category.component';
+import { AdminCategoryAddComponent } from './modules/admin/admin-category/admin-category-add/admin-category-add.component';
+import { AdminCategoryUpdateComponent } from './modules/admin/admin-category/admin-category-update/admin-category-update.component';
 
 const routes: Routes = [
   {
@@ -40,7 +43,10 @@ const routes: Routes = [
       {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizedGuard]},
       {path: 'admin/products', component: AdminProductComponent, canActivate: [AdminAuthorizedGuard]},
       {path: 'admin/products/update/:id', component: AdminProductUpdateComponent, canActivate: [AdminAuthorizedGuard]},
-      {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizedGuard]}
+      {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/categories', component: AdminCategoryComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/categories/add', component: AdminCategoryAddComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/categories/update/:id', component: AdminCategoryUpdateComponent, canActivate: [AdminAuthorizedGuard]}
     ]
   },
   {

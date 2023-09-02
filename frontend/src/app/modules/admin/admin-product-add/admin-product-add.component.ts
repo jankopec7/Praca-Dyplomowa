@@ -56,7 +56,7 @@ export class AdminProductAddComponent implements OnInit {
     } as AdminProductUpdate)
       .subscribe({
         next: product => {
-          this.router.navigate(["/admin/products/update", product.id])
+          this.router.navigate(["/admin/products"])
             .then(() => this.snackBar.open("Product successfully added", "", { duration: 3000 }))
         },
         error: err => this.adminMessageService.addSpringErrors(err.error)

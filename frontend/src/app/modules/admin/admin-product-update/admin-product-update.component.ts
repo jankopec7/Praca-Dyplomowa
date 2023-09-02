@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
 import { AdminMessageService } from '../admin-message.service';
 import { AdminProductUpdateService } from './admin-product-update.service';
 import { AdminProductUpdate } from './model/adminProductUpdate';
@@ -20,7 +20,8 @@ export class AdminProductUpdateComponent implements OnInit {
   image: string | null = null;
 
   constructor(
-    private router: ActivatedRoute,
+    private router: Router, 
+    private route: ActivatedRoute,
     private adminProductUpdateService: AdminProductUpdateService,
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
@@ -46,13 +47,13 @@ export class AdminProductUpdateComponent implements OnInit {
   }
 
   getProduct() {
-    let id = Number(this.router.snapshot.params['id']);
+    let id = Number(this.route.snapshot.params['id']);
     this.adminProductUpdateService.getProduct(id)
       .subscribe(product => this.mapFormValues(product));
   }
 
   submit() {
-    let id = Number(this.router.snapshot.params['id']);
+    let id = Number(this.route.snapshot.params['id']);
     this.adminProductUpdateService.savePost(id, {
       name: this.productForm.get('name')?.value,
       description: this.productForm.get('description')?.value,
@@ -66,6 +67,7 @@ export class AdminProductUpdateComponent implements OnInit {
       next: product => {
         this.mapFormValues(product);
         this.snackBar.open("Product was saved", '', { duration: 3000 });
+        this.router.navigate(["/admin/products"]);
       },
       error: err => this.adminMessageService.addSpringErrors(err.error)
     });
