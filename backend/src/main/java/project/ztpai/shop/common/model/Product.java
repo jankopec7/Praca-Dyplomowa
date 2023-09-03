@@ -1,14 +1,12 @@
 package project.ztpai.shop.product.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import lombok.*;
 
 import java.math.BigDecimal;
 
-    @Entity
+@Entity
     @Getter
     @AllArgsConstructor
     @NoArgsConstructor
@@ -24,4 +22,5 @@ import java.math.BigDecimal;
         private String currency;
         private String image;
         private String slug;
+
     }

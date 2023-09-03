@@ -21,6 +21,7 @@ import { AdminCategoryComponent } from './modules/admin/admin-category/admin-cat
 import { AdminCategoryAddComponent } from './modules/admin/admin-category/admin-category-add/admin-category-add.component';
 import { AdminCategoryUpdateComponent } from './modules/admin/admin-category/admin-category-update/admin-category-update.component';
 import { CategoryComponent } from './modules/category/category.component';
+import { AdminReviewComponent } from './modules/admin/admin-review/admin-review.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
       {path: 'products', component: ProductComponent},
       {path: 'products/:slug', component: ProductDetailsComponent},
       {path: 'categories/:slug', component: CategoryComponent},
-      {path: 'profile', component: CategoryComponent},
+      {path: 'profile', component: ProfileComponent},
 
     ]
   },
@@ -48,7 +49,8 @@ const routes: Routes = [
       {path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AdminAuthorizedGuard]},
       {path: 'admin/categories', component: AdminCategoryComponent, canActivate: [AdminAuthorizedGuard]},
       {path: 'admin/categories/add', component: AdminCategoryAddComponent, canActivate: [AdminAuthorizedGuard]},
-      {path: 'admin/categories/update/:id', component: AdminCategoryUpdateComponent, canActivate: [AdminAuthorizedGuard]}
+      {path: 'admin/categories/update/:id', component: AdminCategoryUpdateComponent, canActivate: [AdminAuthorizedGuard]},
+      {path: 'admin/reviews', component: AdminReviewComponent, canActivate: [AdminAuthorizedGuard]}
     ]
   },
   {

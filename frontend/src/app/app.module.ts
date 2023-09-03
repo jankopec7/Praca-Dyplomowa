@@ -14,8 +14,7 @@ import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorized
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
