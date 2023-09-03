@@ -1,4 +1,4 @@
-package project.ztpai.shop.review.controller.dto;
+package project.ztpai.shop.product.service.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,4 +11,5 @@ public class ReviewDto {
     private String authorName;
     private String content;
     private boolean moderate;
+
 }

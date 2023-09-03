@@ -1,10 +1,12 @@
-package project.ztpai.shop.product.model;
+package project.ztpai.shop.common.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-import lombok.*;
-
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
     @Getter

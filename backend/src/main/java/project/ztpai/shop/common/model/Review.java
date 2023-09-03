@@ -1,4 +1,4 @@
-package project.ztpai.shop.review.model;
+package project.ztpai.shop.common.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

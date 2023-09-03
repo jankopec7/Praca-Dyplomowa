@@ -2,6 +2,7 @@ package project.ztpai.shop.product.service.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import project.ztpai.shop.product.service.dto.ReviewDto;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,4 +19,5 @@ public class ProductDto {
     private String currency;
     private String image;
     private String slug;
+    private List<ReviewDto> reviews;
 }

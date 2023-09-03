@@ -65,3 +65,14 @@ alter table product add constraint fk_product_category_id foreign key (category_
 insert into category (id, name, description, slug) values(1, 'Others', '', 'others');
 update product set category_id=1;
 alter table product MODIFY category_id bigint not null;
+
+--changeset jkopec7:14
+create table review(
+        id bigint not null auto_increment PRIMARY KEY,
+        product_id bigint not null,
+        author_name varchar(60) not null,
+        content text
+);
+--changeset jkopec7:15
+alter table review add moderated boolean  default false;
+

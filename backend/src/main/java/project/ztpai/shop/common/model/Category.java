@@ -1,4 +1,4 @@
-package project.ztpai.shop.category.model;
+package project.ztpai.shop.common.model;
 
 import lombok.Getter;
 

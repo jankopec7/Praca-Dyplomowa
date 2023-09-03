@@ -1,9 +1,9 @@
-package project.ztpai.shop.product.repository;
+package project.ztpai.shop.common.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import project.ztpai.shop.product.model.Product;
+import project.ztpai.shop.common.model.Product;
 
 import java.util.Optional;
 

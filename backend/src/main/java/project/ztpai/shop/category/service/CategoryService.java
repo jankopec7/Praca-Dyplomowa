@@ -6,12 +6,12 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import project.ztpai.shop.category.model.Category;
+import project.ztpai.shop.common.model.Category;
 import project.ztpai.shop.category.model.dto.CategoryProductsDto;
 import project.ztpai.shop.category.repository.CategoryRepository;
-import project.ztpai.shop.product.controller.dto.ProductListDto;
-import project.ztpai.shop.product.model.Product;
-import project.ztpai.shop.product.repository.ProductRepository;
+import project.ztpai.shop.common.dto.ProductListDto;
+import project.ztpai.shop.common.model.Product;
+import project.ztpai.shop.common.repository.ProductRepository;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class CategoryService {
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
 
-    public List<project.ztpai.shop.category.model.Category> getCategories() {
+    public List<Category> getCategories() {
         return categoryRepository.findAll();
     }
     @Transactional(readOnly = true)

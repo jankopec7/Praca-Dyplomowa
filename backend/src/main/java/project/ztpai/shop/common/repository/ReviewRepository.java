@@ -1,4 +1,4 @@
-package project.ztpai.shop.review.repository;
+package project.ztpai.shop.common.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import project.ztpai.shop.common.model.Review;
