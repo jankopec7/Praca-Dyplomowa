@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from 'src/app/modules/product-details/product
 import { ProfileComponent } from 'src/app/modules/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from 'src/app/modules/category/category.component';
+import { CartComponent } from 'src/app/modules/cart/cart.component';
 
 
 
@@ -20,7 +21,8 @@ import { CategoryComponent } from 'src/app/modules/category/category.component';
     ProductComponent,
     ProductDetailsComponent,
     ProfileComponent,
-    CategoryComponent 
+    CategoryComponent,
+    CartComponent
 
   ],
   imports: [
