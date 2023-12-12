@@ -4,8 +4,8 @@ import project.praca.shop.cart.controller.dto.CartSummaryDto;
 import project.praca.shop.cart.controller.dto.CartSummaryItemDto;
 import project.praca.shop.cart.controller.dto.ProductDto;
 import project.praca.shop.cart.controller.dto.SummaryDto;
-import project.praca.shop.cart.model.Cart;
-import project.praca.shop.cart.model.CartItem;
+import project.praca.shop.common.model.Cart;
+import project.praca.shop.common.model.CartItem;
 import project.praca.shop.common.model.Product;
 
 import java.math.BigDecimal;

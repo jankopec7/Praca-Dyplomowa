@@ -11,6 +11,8 @@ import { ProfileComponent } from 'src/app/modules/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from 'src/app/modules/category/category.component';
 import { CartComponent } from 'src/app/modules/cart/cart.component';
+import { OrderComponent } from 'src/app/modules/order/order.component';
+import { ReplacePipe } from 'src/app/modules/common/pipe/preplacepipe';
 
 
 
@@ -22,7 +24,9 @@ import { CartComponent } from 'src/app/modules/cart/cart.component';
     ProductDetailsComponent,
     ProfileComponent,
     CategoryComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent,
+    ReplacePipe
 
   ],
   imports: [

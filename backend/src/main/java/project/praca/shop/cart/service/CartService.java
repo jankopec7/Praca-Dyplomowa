@@ -3,10 +3,10 @@ package project.praca.shop.cart.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import project.praca.shop.cart.model.Cart;
-import project.praca.shop.cart.model.CartItem;
+import project.praca.shop.common.model.Cart;
+import project.praca.shop.common.model.CartItem;
 import project.praca.shop.cart.model.dto.CartProductDto;
-import project.praca.shop.cart.repository.CartRepository;
+import project.praca.shop.common.repository.CartRepository;
 import project.praca.shop.common.model.Product;
 import project.praca.shop.common.repository.ProductRepository;
 

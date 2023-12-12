@@ -92,3 +92,63 @@ create table cart_item (
                            constraint fk_cart_item_product_id foreign key (product_id) references product(id),
                            constraint fk_cart_item_cart_id foreign key (cart_id) references cart(id)
 );
+
+
+--changeset jkopec7:18
+create table `order`(
+                        id bigint not null auto_increment PRIMARY KEY,
+                        place_date datetime not null,
+                        order_status varchar(32) not null,
+                        gross_value decimal(6,2) not null,
+                        firstname varchar(32) not null,
+                        lastname varchar(32) not null,
+                        street varchar(64) not null,
+                        zipcode varchar(6) not null,
+                        city varchar(64) not null,
+                        email varchar(64) not null,
+                        phone varchar(12) not null
+);
+
+--changeset jkopec7:19
+create table order_row(
+                          id bigint not null auto_increment PRIMARY KEY,
+                          order_id bigint not null,
+                          product_id bigint not null,
+                          quantity int not null,
+                          price decimal(6,2) not null,
+                          constraint fk_order_row_order_id foreign key (order_id) references `order`(id),
+                          constraint fk_order_row_product_id foreign key (product_id) references product(id)
+);
+
+--changeset jkopec7:20
+
+create table shipment(
+                         id bigint not null auto_increment PRIMARY KEY,
+                         name varchar(64) not null,
+                         price decimal(6,2) not null,
+                         type varchar(32) not null,
+                         default_shipment boolean default false
+);
+insert into shipment(name, price, type, default_shipment) values ('Kurier', 9.99, 'DELIVERYMAN', true);
+insert into shipment(name, price, type, default_shipment) values ('Odbiór osobisty', 0.0, 'SELFPICKUP', false);
+
+--changeset jkopec7:21
+alter table order_row MODIFY product_id bigint;
+alter table order_row add shipment_id bigint;
+alter table order_row add constraint fk_order_row_shipment_id foreign key (shipment_id) references shipment(id);
+
+--changeset jkopec7:22
+create table payment(
+                        id bigint not null auto_increment PRIMARY KEY,
+                        name varchar(64) not null,
+                        type varchar(32) not null,
+                        default_payment boolean default false,
+                        note text
+);
+insert into payment(id, name, type, default_payment, note)
+values (1, 'Przelew bankowy', 'BANK_TRANSFER', true, 'Prosimy o dokonanie przelewu na konto:\n58 1030 1739 5825 1518 9904 6969\n w tytule proszę podać nr zamówienia');
+
+--changeset jkopec7:23
+alter table `order` add payment_id bigint;
+update `order` set payment_id=1;
+alter table `order` MODIFY payment_id bigint not null;

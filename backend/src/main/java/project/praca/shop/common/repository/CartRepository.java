@@ -1,9 +1,9 @@
-package project.praca.shop.cart.repository;
+package project.praca.shop.common.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import project.praca.shop.cart.model.Cart;
+import project.praca.shop.common.model.Cart;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -28,14 +28,17 @@
         </div>
     </div>
     <div class="card-row" fxLayoutAlign="end start">
-        <button mat-flat-button color="accent" (click)="submit()">update your basket</button>
+        <button type="button" class="updateButton" mat-flat-button color="accent" (click)="submit()">update your basket</button>
     </div>
     <div fxLayoutAlign="end start">
         <div class="summary"> Value: </div>
         <div class="summary"> <b>{{summary?.summary?.grossValue}}</b></div>
     </div>
     <div>
-        <button mat-flat-button color="accent" (click)="back()">Back to shopping</button>
+        <button button type="button" class="backButton" mat-flat-button color="accent" (click)="back()">Back to shopping</button>
+    </div>
+    <div fxLayoutAlign="end start">
+        <button type="button" class="orderButton" mat-flat-button color="accent" routerLink="/order">Order now</button>
     </div>
 </div>
 </form>
