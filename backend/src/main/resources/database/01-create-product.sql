@@ -152,3 +152,12 @@ values (1, 'Przelew bankowy', 'BANK_TRANSFER', true, 'Prosimy o dokonanie przele
 alter table `order` add payment_id bigint;
 update `order` set payment_id=1;
 alter table `order` MODIFY payment_id bigint not null;
+
+--changeset jkopec7:24
+create table order_log(
+                    id bigint not null auto_increment PRIMARY KEY,
+                    order_id bigint not null,
+                    created datetime not null,
+                    note text
+);
+

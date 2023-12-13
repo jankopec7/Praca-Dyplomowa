@@ -12,10 +12,9 @@ import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
 import { AdminAuthorizedGuard } from './modules/common/guard/adminAuthorizedGuard';
 import { ProfileAuthorizedGuard } from './modules/common/guard/profileAuthorizedGuard';
 import { CookieService } from 'ngx-cookie-service';
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
 
   ],
   imports: [
