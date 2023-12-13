@@ -1,4 +1,4 @@
-# Aplikacja Internetowa dla Sklepu E-commerce z Zintegrowanym Systemem Płatności
+# Aplikacja Internetowa dla Sklepu E-commerce ze Zintegrowanym Systemem Płatności
 
 ## Opis Pracy
 
