@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
+const proxy = require('http-proxy-middleware');
 const app = express();
 
 const apiProxy = proxy.createProxyMiddleware("/api", {
-        target: process.env.BACKEND_URL,
-        changeOrigin: true,
-        pathRewrite: {
-            '^/api':''
-        }
+    target: process.env.BACKEND_URL || 'http://localhost:8080/',
+    changeOrigin: true,
+    pathRewrite: {
+        '^/api':''
+    }
 });
 
 app.use(apiProxy);
