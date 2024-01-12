@@ -161,3 +161,11 @@ create table order_log(
                     note text
 );
 
+--changeset jkopec7:25
+update payment set default_payment=false;
+insert into payment(name, type, default_payment, note)
+values ('Płatność online Przelewy 24', 'P24_ONLINE', true, '');
+alter table `order` add user_id bigint;
+alter table `order` add constraint fk_order_user_id foreign key (user_id) references users(id);
+alter table `order` add order_hash varchar(12);
+

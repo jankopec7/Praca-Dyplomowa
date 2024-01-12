@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import project.praca.shop.order.model.OrderStatus;
+import project.praca.shop.common.model.OrderStatus;
 import project.praca.shop.order.model.Payment;
 
 import java.math.BigDecimal;
@@ -20,4 +20,5 @@ public class OrderSummary {
     private OrderStatus status;
     private BigDecimal grossValue;
     private Payment payment;
+    private String redirectUrl;
 }
