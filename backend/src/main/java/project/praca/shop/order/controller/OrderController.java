@@ -1,6 +1,7 @@
 package project.praca.shop.order.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
@@ -63,6 +64,8 @@ public class OrderController {
                                     @RequestBody NotificationReceiveDto receiveDto,
                                     HttpServletRequest request
     ){
-        orderService.receiveNotification(orderHash, receiveDto, request.getRemoteAddr());
+        String forwardedAddress = request.getHeader("x-forwarder-for");
+        orderService.receiveNotification(orderHash, receiveDto,
+                StringUtils.isNotEmpty(forwardedAddress) ? forwardedAddress: request.getRemoteAddr());
     }
 }

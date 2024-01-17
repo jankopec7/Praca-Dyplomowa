@@ -37,7 +37,7 @@ const routes: Routes = [
       {path: 'products', component: ProductComponent},
       {path: 'products/:slug', component: ProductDetailsComponent},
       {path: 'categories/:slug', component: CategoryComponent},
-      {path: 'profile', component: ProfileComponent},
+      {path: 'profile', component: ProfileComponent, canActivate: [ProfileAuthorizedGuard]},
       {path: 'cart', component: CartComponent},
       {path: 'order', component: OrderComponent},
       {path: 'order/notification/:orderHash', component: OrderNotificationComponent}

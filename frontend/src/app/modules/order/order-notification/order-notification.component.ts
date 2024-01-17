@@ -26,7 +26,7 @@ export class OrderNotificationComponent implements OnInit {
       .subscribe(status => {
         this.status = status.paid;
         if(this.status === false){
-          interval(5000).pipe(
+          interval(10000).pipe(
             mergeMap(() => this.orderService.getStatus(hash)),
             takeUntil(timer(3 * 60 * 1000)),
             takeWhile(value => value.paid === false, true)

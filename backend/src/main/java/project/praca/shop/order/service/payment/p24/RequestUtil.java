@@ -71,7 +71,7 @@ public class RequestUtil {
 
     public static void validateIpAddress(String remoteAddr, PaymentMethodP24Config config) {
         if(!config.getServers().contains(remoteAddr)){
-            throw new RuntimeException("Niepoprawny adrres IP dla potwierdzenia płatności");
+            throw new RuntimeException("Niepoprawny adrres IP dla potwierdzenia płatności" + remoteAddr);
         }
     }
 
