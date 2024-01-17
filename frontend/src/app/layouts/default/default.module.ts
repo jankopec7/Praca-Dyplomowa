@@ -13,6 +13,7 @@ import { CategoryComponent } from 'src/app/modules/category/category.component';
 import { CartComponent } from 'src/app/modules/cart/cart.component';
 import { OrderComponent } from 'src/app/modules/order/order.component';
 import { ReplacePipe } from 'src/app/modules/common/pipe/preplacepipe';
+import { OrderNotificationComponent } from 'src/app/modules/order/order-notification/order-notification.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ReplacePipe } from 'src/app/modules/common/pipe/preplacepipe';
     CategoryComponent,
     CartComponent,
     OrderComponent,
-    ReplacePipe
+    ReplacePipe,
+    OrderNotificationComponent
 
   ],
   imports: [

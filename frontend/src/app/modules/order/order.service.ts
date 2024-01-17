@@ -6,6 +6,7 @@ import { CartCommonService } from '../common/service/cart-common.service';
 import { InitData } from './model/initData';
 import { OrderDto } from './model/orderDto';
 import { OrderSummary } from './model/orderSummary';
+import { NotificationDto } from './model/notifiationDto';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,9 @@ export class OrderService {
 
   getInitData(): Observable<InitData> {
     return this.http.get<InitData>("/api/orders/initData");
+  }
+
+  getStatus(hash: any): Observable<NotificationDto> {
+    return this.http.get<NotificationDto>("/api/orders/notification/" + hash);
   }
 }
