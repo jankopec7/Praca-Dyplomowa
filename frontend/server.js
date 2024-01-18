@@ -1,21 +1,27 @@
 const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
-const proxy = require('http-proxy-middleware');
 const app = express();
 
-const apiProxy = proxy.createProxyMiddleware("/api", {
-    target: process.env.BACKEND_URL || 'https://backend-production-c26d.up.railway.app',
-    changeOrigin: true,
-    pathRewrite: {
-        '^/api':''
-    }
+const backendUrl = process.env.BACKEND_URL || 'https://backend-production-c26d.up.railway.app';
+
+const apiProxy = createProxyMiddleware('/api', {
+  target: backendUrl,
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '',
+  },
 });
 
-app.use(apiProxy);
-app.use(express.static(__dirname + "/dist/shop"));
+app.use('/api', apiProxy);
+app.use(express.static(path.join(__dirname, 'dist/shop')));
 
-app.get("/*", (req, res) => {
-    res.sendFile(__dirname + "/dist/shop/index.html")
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/shop/index.html'));
 });
 
-app.listen(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
