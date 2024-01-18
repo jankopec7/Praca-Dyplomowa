@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
 const app = express();
 
-const backendUrl = process.env.BACKEND_URL || 'https://backend-production-c26d.up.railway.app';
+const backendUrl = process.env.BACKEND_URL || 'https://backend-production-c26d.up.railway.app/';
 
 const apiProxy = createProxyMiddleware('/api', {
   target: backendUrl,
