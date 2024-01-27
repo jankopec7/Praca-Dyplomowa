@@ -169,3 +169,5 @@ alter table `order` add user_id bigint;
 alter table `order` add constraint fk_order_user_id foreign key (user_id) references users(id);
 alter table `order` add order_hash varchar(12);
 
+--changeset jkopec7:26
+alter table product add sale_price decimal(9, 2);

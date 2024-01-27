@@ -78,6 +78,16 @@ import { FormCategoryService } from "./form-category.service";
         </mat-form-field>
 
         <mat-form-field appearance="fill">
+            <mat-label>Bargain price</mat-label>
+            <input matInput placeholder="Add product bargain price" formControlName="salePrice">
+            <div *ngIf="salePrice?.invalid && (salePrice?.dirty || salePrice?.touched)" class="erroMessages">
+                <div *ngIf="salePrice?.errors?.['min']">
+                    Bargain price must be > 0
+                </div>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
             <mat-label>Currency</mat-label>
             <input matInput placeholder="Add currency" formControlName="currency">
             <div *ngIf="currency?.invalid && (currency?.dirty || currency?.touched)" class="erroMessages">
@@ -133,6 +143,10 @@ export class AdminProductFormConponent implements OnInit {
 
     get price(){
         return this.parentForm.get("price");
+    }
+
+    get salePrice(){
+        return this.parentForm.get("salePrice");
     }
 
     get currency(){

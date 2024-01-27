@@ -41,13 +41,13 @@ public class CartMapper {
                 .name(product.getName())
                 .currency(product.getCurrency())
                 .image(product.getImage())
-                .price(product.getPrice())
+                .price(product.getSalePrice() != null ? product.getPrice(): product.getPrice())
                 .slug(product.getSlug())
                 .build();
     }
 
     private static BigDecimal calculateLineValue(CartItem cartItem) {
-        return cartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity()));
+        return (cartItem.getProduct().getSalePrice() != null ?  cartItem.getProduct().getSalePrice(): cartItem.getProduct().getPrice()).multiply(BigDecimal.valueOf(cartItem.getQuantity()));
     }
 
     private static SummaryDto mapToSummary(List<CartItem> items) {
